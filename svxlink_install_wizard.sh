@@ -100,10 +100,11 @@ function svxlinkInstallRpi() {
                 sudo tar xvjf svxlink-sounds-en_US-heather-16k-19.09.99.2.tar.bz2 >> log
                 sleep 0.2
                 echo 95
-                sudo cp en_US-heather-16k -r /usr/share/svxlink/sounds/
+               	sudo mv en_US-heather-16k en_US
+		cd ~
 		sleep 0.2
 		echo 100
-				rm -rf log
+		rm -rf log
         } | whiptail --gauge "Prosim pocaka, poteka  namestitev SVXlink-a za RPi..." 6 50 0
 }
 
