@@ -8,7 +8,7 @@ function displayMessage() {
 
 function main() {
 while true; do
-        menusvxlink=$(whiptail --title "...::::: SVXlink Installing Wizard :::::..." --ok-button "Select" --cancel-button "Quit" --menu "Izberi namestitev" 20 78 10 \
+        menusvxlink=$(whiptail --title "...::::: SVXlink Installing Wizard :::::..." --ok-button "Select" --cancel-button "Quit" --menu "Select option:" 20 78 10 \
 		"1" "..:: Install SVXLink on RPi ::.." \
 		"2" "..:: Install SVXLink on PC ::.." \
 		"3" "..:: Copy importatnt folders SVXLink ::.." \
@@ -86,18 +86,17 @@ function svxlinkInstallPC() {
 
 function svxlinkUninstall() {
 
-                sudo rm -rf ~/svxlink/
-                echo ~/svxlink/ delited
+                sudo rm -rf /svxlink/
+                echo /svxlink/ delited
 		sleep 1
-                sudo rm -rf ~/etc/svxlink/
-		echo ~/etc/svxlink/ delited
+                sudo rm -rf /etc/svxlink/
+		echo /etc/svxlink/ delited
 		sleep 1
-                sudo rm -rf ~/var/spool/svxlink/
-		echo ~/var/spool/svxlink/ delited
+                sudo rm -rf /var/spool/svxlink/
+		echo /var/spool/svxlink/ delited
                 sleep 1
-                sudo rm -rf ~/usr/share/svxlink/
-		echo ~/usr/share/svxlink/ delited
-                sleep 1
+                sudo rm -rf /usr/share/svxlink/
+		sleep 1
 	whiptail --msgbox "Delite all files is complite..." 10 50
 }
 
