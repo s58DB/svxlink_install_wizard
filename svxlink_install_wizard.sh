@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+## Authour: Danilo Bozic - S58DB
+
 ## Util Methods:
 function displayMessage() {
     whiptail --title "$1" --msgbox "$2" 8 78
