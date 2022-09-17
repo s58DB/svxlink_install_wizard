@@ -59,7 +59,7 @@ function svxlinkInstallRpi() {
                 sudo tar xvjf svxlink-sounds-en_US-heather-16k-19.09.99.2.tar.bz2
                	sudo mv en_US-heather-16k en_US
 		cd ~
-	 whiptail --msgbox "Namestitev je koncana..." 10 50
+	 whiptail --msgbox "Install is complite..." 10 50
 }
 
 function svxlinkInstallPC() {
@@ -81,7 +81,7 @@ function svxlinkInstallPC() {
                 sudo wget https://github.com/sm0svx/svxlink-sounds-en_US-heather/releases/download/19.09.99.2/svxlink-sounds-en_US-heather-16k-19.09.99.2.tar.bz2
                 sudo tar xvjf svxlink-sounds-en_US-heather-16k-19.09.99.2.tar.bz2
                 sudo mv en_US-heather-16k en_US
-	 whiptail --msgbox "Namestitev je koncana..." 10 50
+	 whiptail --msgbox "Install is complite..." 10 50
 }
 
 function svxlinkUninstall() {
@@ -94,7 +94,7 @@ function svxlinkUninstall() {
                 sleep 1
                 rm -rf ~/usr/share/svxlink/
                 sleep 1
-	whiptail --msgbox "Odstranitev je koncana..." 10 50
+	whiptail --msgbox "Delite all files is complite..." 10 50
 }
 
 function svxlinkcopyall() {
@@ -115,7 +115,7 @@ function svxlinkcopyall() {
 		cp -f -r /var/spool/svxlink/* var/spool/svxlink/
 		cd ~
 		chown -hR pi:pi Kopija_SVXLink_$(date +"%d_%m_%Y")
-        whiptail --msgbox "Odstranitev je koncana..." 10 50
+        whiptail --msgbox "Copy all file is complite..." 10 50
 }
 
 main
