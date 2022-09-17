@@ -26,10 +26,10 @@ while true; do
 			svxlinkInstallPC
 		;;
 		3)
-			svxlinkUninstall
+			svxlinkcopyall
 		;;
 		4)
-			svxlinkcopyall
+			svxlinkUninstall
 		;;
 
             esac
