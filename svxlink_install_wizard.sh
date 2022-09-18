@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+## Author: Danilo - S58DB
+## E-mail: s58db.danilo@gmail.com
+
 ## Util Methods:
 function displayMessage() {
     whiptail --title "$1" --msgbox "$2" 8 78
