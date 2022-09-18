@@ -86,17 +86,17 @@ function svxlinkInstallPC() {
 
 function svxlinkUninstall() {
 
-                sudo rm -rf ~/svxlink/
-                echo ~/svxlink/ delite
+                sudo rm -rf /svxlink/
+                echo /svxlink/ delite
 		sleep 1
-                sudo rm -rf ~/etc/svxlink/
-		echo ~/etc/svxlink/ delite
+                sudo rm -rf /etc/svxlink/
+		echo /etc/svxlink/ delite
 		sleep 1
-                sudo rm -rf ~/var/spool/svxlink/
-		echo ~/var/spool/svxlink/7
+                sudo rm -rf /var/spool/svxlink/
+		echo /var/spool/svxlink/7
                 sleep 1
-                sudo rm -rf ~/usr/share/svxlink/
-		echo ~/usr/share/svxlink/
+                sudo rm -rf /usr/share/svxlink/
+		echo /usr/share/svxlink/
                 sleep 1
 	whiptail --msgbox "Delite all files is complite..." 10 50
 }
