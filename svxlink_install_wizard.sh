@@ -122,7 +122,7 @@ function svxlinkcopyall() {
 		cp -f -r /usr/share/svxlink/* usr/share/svxlink/
 		cp -f -r /var/spool/svxlink/* var/spool/svxlink/
 		cd ~
-                echo "Your backup is here /home/$USER/Kopija_SVXLink_$(date +"%d_%m_%Y")"
+                echo Your backup is here /home/$USER/Kopija_SVXLink_$(date +"%d_%m_%Y")
 		chown -hR pi:pi Kopija_SVXLink_$(date +"%d_%m_%Y")
         whiptail --msgbox "Copy all file is complite..." 10 50
 }
