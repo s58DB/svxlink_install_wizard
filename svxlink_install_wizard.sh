@@ -49,7 +49,8 @@ function svxlinkInstallRpi() {
                 sudo apt-get install libgpiod-dev gpiod -y
                 sudo useradd -U -r -G audio,plugdev,daemon,gpio svxlink
                 cd ~
-                git clone https://github.com/sm0svx/svxlink.git
+                read gitaddrvar
+                git clone $gitaddrvar
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build 
                 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON ..
@@ -121,6 +122,7 @@ function svxlinkcopyall() {
 		cp -f -r /usr/share/svxlink/* usr/share/svxlink/
 		cp -f -r /var/spool/svxlink/* var/spool/svxlink/
 		cd ~
+                echo "Your backup is here /home/$USER/Kopija_SVXLink_$(date +"%d_%m_%Y")"
 		chown -hR pi:pi Kopija_SVXLink_$(date +"%d_%m_%Y")
         whiptail --msgbox "Copy all file is complite..." 10 50
 }
