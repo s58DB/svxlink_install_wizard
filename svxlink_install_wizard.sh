@@ -49,9 +49,7 @@ function svxlinkInstallRpi() {
                 sudo apt-get install libgpiod-dev gpiod -y
                 sudo useradd -U -r -G audio,plugdev,daemon,gpio svxlink
                 cd ~
-		echo Enter SVXLink GitHub clone link: 
-  		read gitaddrvar
-                git clone $gitaddrvar
+		git clone https://github.com/sm0svx/svxlink.git
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build 
                 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON ..
@@ -74,10 +72,7 @@ function svxlinkInstallPC() {
                 sudo apt-get install build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc alsa-utils -y
                 sudo useradd -U -r -G audio,plugdev,daemon svxlink
                 cd ~
-		echo Enter SVXLink GitHub clone link: 
-  		read gitaddrvar
-                git clone $gitaddrvar
-                #git clone https://github.com/sm0svx/svxlink.git
+		git clone https://github.com/sm0svx/svxlink.git
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build
                 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON ..
@@ -94,14 +89,14 @@ function svxlinkInstallPC() {
 
 function svxlinkUninstall() {
 
-                sudo rm -rf /svxlink/
-                echo /svxlink/ delite
+                sudo rm -rf ~/svxlink/
+                echo ~/svxlink/
 		sleep 1
                 sudo rm -rf /etc/svxlink/
-		echo /etc/svxlink/ delite
+		echo /etc/svxlink/
 		sleep 1
                 sudo rm -rf /var/spool/svxlink/
-		echo /var/spool/svxlink/7
+		echo /var/spool/svxlink/
                 sleep 1
                 sudo rm -rf /usr/share/svxlink/
 		echo /usr/share/svxlink/
