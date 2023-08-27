@@ -49,7 +49,8 @@ function svxlinkInstallRpi() {
                 sudo apt-get install libgpiod-dev gpiod -y
                 sudo useradd -U -r -G audio,plugdev,daemon,gpio svxlink
                 cd ~
-                read gitaddrvar
+		echo Enter SVXLink GitHub clone link: 
+  		read gitaddrvar
                 git clone $gitaddrvar
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build 
@@ -73,7 +74,10 @@ function svxlinkInstallPC() {
                 sudo apt-get install build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc alsa-utils -y
                 sudo useradd -U -r -G audio,plugdev,daemon svxlink
                 cd ~
-                git clone https://github.com/sm0svx/svxlink.git
+		echo Enter SVXLink GitHub clone link: 
+  		read gitaddrvar
+                git clone $gitaddrvar
+                #git clone https://github.com/sm0svx/svxlink.git
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build
                 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON ..
