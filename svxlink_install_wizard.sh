@@ -82,7 +82,7 @@ function svxlinkInstallPC() {
                 sudo make install
                 sudo ldconfig
                 cd /usr/share/svxlink/sounds/
-                sudo wget https://github.com/sm0svx/svxlink-sounds-en_US-heather/releases/download/19.09.99.2/svxlink-sounds-en_US-heather-16k-19.09.99.2.tar.bz2
+                sudo wget https://github.com/sm0svx/svxlink-sounds-en_US-heather/releases/download/24.02/svxlink-sounds-en_US-heather-16k-24.02.tar.bz2
                 sudo tar xvjf svxlink-sounds-en_US-heather-16k-19.09.99.2.tar.bz2
                 sudo mv en_US-heather-16k en_US
 	 whiptail --msgbox "Install is complite..." 10 50
