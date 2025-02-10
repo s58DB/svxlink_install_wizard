@@ -36,7 +36,7 @@ function main() {
 function install_svxlink_rpi() {
     cd ~
     sudo apt update && sudo apt full-upgrade -y
-    sudo apt-get install -y build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev \
+    sudo apt-get install --reinstall -y build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev \
         libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev \
         doxygen groff alsa-utils vorbis-tools curl libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev \
         speedtest-cli mutt mc libgpiod-dev gpiod libssl-dev
