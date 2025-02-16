@@ -24,7 +24,7 @@ function install_svxlink_rpi() {
         libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc \
         libgpiod-dev gpiod libssl-dev 
 
-    sudo useradd -U -r -G audio,plugdev,daemon,gpio svxlink || echo "User already exists."
+    sudo useradd -U -r -G audio,plugdev,daemon,dialout,gpio svxlink || echo "User already exists."
 
     cd ~
     git clone https://github.com/sm0svx/svxlink.git
@@ -56,7 +56,7 @@ function install_svxlink_pc() {
         libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl \
         libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc alsa-utils 
 
-    sudo useradd -U -r -G audio,plugdev,daemon svxlink || echo "User already exists."
+    sudo useradd -U -r -G audio,plugdev,daemon,dialout svxlink || echo "User already exists."
 
     cd ~
     git clone https://github.com/sm0svx/svxlink.git
