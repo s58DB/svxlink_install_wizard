@@ -45,6 +45,8 @@ while true; do
 function svxlinkInstallRpi() {
 		cd ~
                 sudo apt update && sudo apt full-upgrade -y
+		sudo apt remove pulseaudio -y
+  		sudo apt autoremove -y
                 sudo apt-get install build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc libgpiod-dev gpiod libssl-dev libgpiod-dev gpiod -y
                 sudo useradd -U -r -G audio,plugdev,daemon,dialout,gpio svxlink
                 cd ~
