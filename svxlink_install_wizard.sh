@@ -51,9 +51,9 @@ function svxlinkInstallRpi() {
                 sudo useradd -U -r -G audio,plugdev,daemon,dialout,gpio svxlink
                 cd ~
 		git clone https://github.com/sm0svx/svxlink.git
-  		cd svxlink
-    		git reset --hard 12c9d9b
-      		cd  ~
+  		##cd svxlink
+    		##git reset --hard 12c9d9b
+      		##cd  ~
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build 
                 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON ..
@@ -80,9 +80,9 @@ function svxlinkInstallPC() {
                 sudo useradd -U -r -G audio,plugdev,daemon,dialout svxlink
                 cd ~
 		git clone https://github.com/sm0svx/svxlink.git
-  		cd svxlink
-    		git reset --hard 12c9d9b
-      		cd  ~
+  		##cd svxlink
+    		##git reset --hard 12c9d9b
+      		##cd  ~
                 mkdir ~/svxlink/src/build
                 cd ~/svxlink/src/build
                 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON ..
