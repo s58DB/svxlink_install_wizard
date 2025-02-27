@@ -76,7 +76,7 @@ function svxlinkInstallPC() {
                 sudo apt-get update && sudo apt upgrade -y 
 		sudo apt remove pulseaudio -y
   		sudo apt autoremove -y
-                sudo apt-get install --reinstall build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc alsa-utils -y
+                sudo apt-get install --reinstall build-essential wget g++ cmake make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libssl-dev libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc alsa-utils -y
                 sudo useradd -U -r -G audio,plugdev,daemon,dialout svxlink
                 cd ~
 		git clone https://github.com/sm0svx/svxlink.git
