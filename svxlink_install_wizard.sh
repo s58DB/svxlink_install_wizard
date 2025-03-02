@@ -116,25 +116,26 @@ function svxlinkUninstall() {
 }
 
 function svxlinkcopyall() {
-
                 cd ~
-		mkdir "Kopija_SVXLink_$(date +"%d_%m_%Y")"
-                cd Kopija_SVXLink_$(date +"%d_%m_%Y")
-		mkdir etc
-		mkdir etc/svxlink
-		mkdir usr
-		mkdir usr/share
-		mkdir usr/share/svxlink
-		mkdir var
-		mkdir var/spool
-		mkdir var/spool/svxlink
-		cp -f -r /etc/svxlink/* etc/svxlink/ 
-		cp -f -r /usr/share/svxlink/* usr/share/svxlink/
-		cp -f -r /var/spool/svxlink/* var/spool/svxlink/
-		cd ~
-                echo Your backup is here /home/$USER/Kopija_SVXLink_$(date +"%d_%m_%Y")
-		chown -hR pi:pi Kopija_SVXLink_$(date +"%d_%m_%Y")
-        whiptail --msgbox "Copy all file is complite..." 10 50
+   		BACKUP_DIR="Kopija_SVXLink_$(date +"%d_%m_%Y")"
+    		mkdir "$BACKUP_DIR"
+    
+    		mkdir -p "$BACKUP_DIR/etc/svxlink"
+    		mkdir -p "$BACKUP_DIR/usr/share/svxlink"
+    		mkdir -p "$BACKUP_DIR/var/spool/svxlink"
+    
+   		cp -f -r /etc/svxlink/* "$BACKUP_DIR/etc/svxlink/"
+    		cp -f -r /usr/share/svxlink/* "$BACKUP_DIR/usr/share/svxlink/"
+    		cp -f -r /var/spool/svxlink/* "$BACKUP_DIR/var/spool/svxlink/"
+    
+    		chown -hR pi:pi "$BACKUP_DIR"
+
+    		# Ustvari ZIP arhiv
+    		zip -r "${BACKUP_DIR}.zip" "$BACKUP_DIR"
+
+    		# Izpis informacije uporabniku
+    		echo "Your backup is here: /home/$USER/${BACKUP_DIR}.zip"
+    	whiptail --msgbox "Backup and ZIP creation completed." 10 50
 }
 
 main
