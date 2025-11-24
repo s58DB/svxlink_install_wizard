@@ -48,7 +48,11 @@ function svxlinkInstallRpi() {
 		sudo apt-get install --reinstall build-essential wget g++ ladspa-sdk libogg-dev cmake make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc libgpiod-dev gpiod libssl-dev libgpiod-dev gpiod apache2 apache2-bin apache2-data apache2-utils php8.2 python3-serial sqlite3 libssl-dev php8.2-sqlite3 toilet --fix-missing -y
                 sudo useradd -U -r -G audio,plugdev,daemon,dialout,gpio svxlink
                 cd ~
-		git clone https://github.com/sm0svx/svxlink.git
+		wget https://github.com/sm0svx/svxlink/archive/refs/tags/25.05.1.tar.gz
+		tar -xzf svxlink-25.05.1.tar.gz
+		mv svxlink-25.05.1 svxlink
+		cd svxlink
+		#git clone https://github.com/sm0svx/svxlink.git
   		##cd svxlink
     		##git reset --hard 12c9d9b
       		##cd  ~
@@ -71,11 +75,15 @@ function svxlinkInstallRpi() {
 function svxlinkInstallPC() {
 
 		cd ~
-                sudo apt-get update && sudo apt upgrade -y 
+        sudo apt-get update && sudo apt upgrade -y 
 		sudo apt-get install --reinstall build-essential wget g++ cmake ladspa-sdk libogg-dev make libsigc++-2.0-dev libgsm1-dev libpopt-dev tcl-dev libgcrypt20-dev libspeex-dev libasound2-dev libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl libssl-dev libcurl4-openssl-dev git rtl-sdr libjsoncpp-dev speedtest-cli mutt mc alsa-utils apache2 apache2-bin apache2-data apache2-utils php8.2 python3-serial sqlite3 libssl-dev php8.2-sqlite3 toilet --fix-missing -y
-                sudo useradd -U -r -G audio,plugdev,daemon,dialout svxlink
-                cd ~
-		git clone https://github.com/sm0svx/svxlink.git
+        sudo useradd -U -r -G audio,plugdev,daemon,dialout svxlink
+        cd ~
+		wget https://github.com/sm0svx/svxlink/archive/refs/tags/25.05.1.tar.gz
+		tar -xzf svxlink-25.05.1.tar.gz
+		mv svxlink-25.05.1 svxlink
+		cd svxlink
+		#git clone https://github.com/sm0svx/svxlink.git
   		##cd svxlink
     		##git reset --hard 12c9d9b
       		##cd  ~
