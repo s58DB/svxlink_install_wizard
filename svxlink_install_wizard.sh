@@ -49,7 +49,7 @@ function svxlinkInstallRpi() {
                 sudo useradd -U -r -G audio,plugdev,daemon,dialout,gpio svxlink
                 cd ~
 		wget https://github.com/sm0svx/svxlink/archive/refs/tags/25.05.1.tar.gz
-		tar -xzf svxlink-25.05.1.tar.gz
+		tar -xzf 25.05.1.tar.gz
 		mv svxlink-25.05.1 svxlink
 		cd svxlink
 		#git clone https://github.com/sm0svx/svxlink.git
@@ -80,7 +80,7 @@ function svxlinkInstallPC() {
         sudo useradd -U -r -G audio,plugdev,daemon,dialout svxlink
         cd ~
 		wget https://github.com/sm0svx/svxlink/archive/refs/tags/25.05.1.tar.gz
-		tar -xzf svxlink-25.05.1.tar.gz
+		tar -xzf 25.05.1.tar.gz
 		mv svxlink-25.05.1 svxlink
 		cd svxlink
 		#git clone https://github.com/sm0svx/svxlink.git
