@@ -128,12 +128,21 @@ function svxlinkcopyall() {
     mkdir -p "$BACKUP_DIR/etc/svxlink"
     mkdir -p "$BACKUP_DIR/usr/share/svxlink"
     mkdir -p "$BACKUP_DIR/var/spool/svxlink"
+    mkdir -p "$BACKUP_DIR/etc/cron"
+    mkdir -p "$BACKUP_DIR/etc"   # za rc.local
 
-    # Kopiraj datoteke
+    # Kopiraj datoteke SVXLink
     cp -f -r /etc/svxlink/* "$BACKUP_DIR/etc/svxlink/"
     cp -f -r /usr/share/svxlink/* "$BACKUP_DIR/usr/share/svxlink/"
     cp -f -r /var/spool/svxlink/* "$BACKUP_DIR/var/spool/svxlink/"
-    cp -f /etc/rc.local "$BACKUP_DIR/etc/"
+
+    # Kopiraj CRON konfiguracijo
+    cp -f -r /etc/cron* "$BACKUP_DIR/etc/cron/"
+
+    # Kopiraj rc.local (če obstaja)
+    if [[ -f /etc/rc.local ]]; then
+        cp -f /etc/rc.local "$BACKUP_DIR/etc/"
+    fi
 
     # Nastavi lastništvo
     chown -hR pi:pi "$BACKUP_DIR"
