@@ -120,34 +120,34 @@ function svxlinkUninstall() {
 }
 
 function svxlinkcopyall() {
-                cd ~
-                BACKUP_DIR="Kopija_SVXLink_$(date +"%d_%m_%Y")"
-                mkdir "$BACKUP_DIR"
+    cd ~
+    BACKUP_DIR="Kopija_SVXLink_$(date +"%d_%m_%Y")"
+    mkdir "$BACKUP_DIR"
 
-                # Ustvari potrebne mape
-                mkdir -p "$BACKUP_DIR/etc/svxlink"
-                mkdir -p "$BACKUP_DIR/usr/share/svxlink"
-                mkdir -p "$BACKUP_DIR/var/spool/svxlink"
-               # mkdir -p "$BACKUP_DIR/etc"
+    # Ustvari potrebne mape
+    mkdir -p "$BACKUP_DIR/etc/svxlink"
+    mkdir -p "$BACKUP_DIR/usr/share/svxlink"
+    mkdir -p "$BACKUP_DIR/var/spool/svxlink"
 
-               # Kopiraj datoteke
-               cp -f -r /etc/svxlink/* "$BACKUP_DIR/etc/svxlink/"
-               cp -f -r /usr/share/svxlink/* "$BACKUP_DIR/usr/share/svxlink/"
-               cp -f -r /var/spool/svxlink/* "$BACKUP_DIR/var/spool/svxlink/"
-               cp -f /etc/rc.local "$BACKUP_DIR/etc/"
+    # Kopiraj datoteke
+    cp -f -r /etc/svxlink/* "$BACKUP_DIR/etc/svxlink/"
+    cp -f -r /usr/share/svxlink/* "$BACKUP_DIR/usr/share/svxlink/"
+    cp -f -r /var/spool/svxlink/* "$BACKUP_DIR/var/spool/svxlink/"
+    cp -f /etc/rc.local "$BACKUP_DIR/etc/"
 
-               # Nastavi lastništvo
-               chown -hR pi:pi "$BACKUP_DIR"
+    # Nastavi lastništvo
+    chown -hR pi:pi "$BACKUP_DIR"
 
-               # Ustvari ZIP arhiv
-               zip -r "${BACKUP_DIR}.zip" "$BACKUP_DIR"
+    # Ustvari TAR.GZ arhiv
+    tar -czf "${BACKUP_DIR}.tar.gz" "$BACKUP_DIR"
 
-               # Pobriši začasno mapo
-               rm -rf "$BACKUP_DIR"
+    # Pobriši začasno mapo
+    rm -rf "$BACKUP_DIR"
 
-               # Obvestilo uporabniku
-               echo "Your backup is here: /home/$USER/${BACKUP_DIR}.zip"
-       whiptail --msgbox "Backup and ZIP creation completed." 10 50
+    # Obvestilo uporabniku
+    echo "Your backup is here: /home/$USER/${BACKUP_DIR}.tar.gz"
+    whiptail --msgbox "Backup and TAR.GZ creation completed." 10 50
 }
+
 
 main
